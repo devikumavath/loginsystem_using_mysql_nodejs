@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="public/welcome.css">
+</head>
+<body>
+    <h1>Welcome <span id="username"></span></h1>
+
+    <script>
+      // Retrieve the username from the URL query parameters
+      const urlParams = new URLSearchParams(window.location.search);
+      const email = urlParams.get("username");
+
+      // Extract the username from the email address
+      const username = email.substring(0, email.indexOf("@"));
+
+      // Set the username in the HTML
+      const usernameElement = document.getElementById("username");
+      usernameElement.textContent = username;
+    </script>
+</body>
+</html>
